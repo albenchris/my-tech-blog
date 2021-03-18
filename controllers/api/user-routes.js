@@ -66,4 +66,33 @@ router.post("/", (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
+// LOGIN
+
+// LOGOUT
+
+// UPDATE user "/api/users/:id"
+router.put("/:id", (req, res) => {
+    // expects {
+    //     username: "MyUsername",
+    //     email: "myemail@email.com",
+    //     password: "badpasswordexample"
+    // }
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: "No user found with this id" });
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => res.status(500).json(err));
+});
+
+// DELETE user "/api/users/:id"
+
 module.exports = router;
