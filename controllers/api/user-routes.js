@@ -67,6 +67,37 @@ router.post("/", (req, res) => {
 });
 
 // LOGIN
+router.post("/login", (req, res) => {
+    User.findOne({
+        where: { email: req.body.email }
+    })
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(400).json({ message: "No user found with this email" })
+                return;
+            }
+
+            // validation
+            const validPW = dbUserData.checkPassword(req.body.password);
+            if (!validPW) {
+                console.log("!validPW");
+                res.status(400).json({ message: "incorrect password!" });
+                return;
+            }
+
+            req.session.save(() => {
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.username;
+                req.session.loggedIn = true;
+
+                res.json({
+                    user: dbUserData,
+                    message: "You are now logged in!"
+                });
+            });
+        })
+        .catch(err => res.status(500).json(err));
+});
 
 // LOGOUT
 

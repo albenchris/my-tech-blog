@@ -37,6 +37,16 @@ router.get("/", (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
+// render login page "/login"
+router.get("/login", (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect("/");
+        return;
+    }
+
+    res.render("login");
+});
+
 // render single-post page "/post/:id"
 router.get("/post/:id", (req, res) => {
     Post.findOne({
