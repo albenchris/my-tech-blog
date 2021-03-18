@@ -62,6 +62,20 @@ router.get("/:id", (req, res) => {
 });
 
 // CREATE a post "/api/posts"
+router.post("/", (req, res) => {
+    // expects {
+    //     title: "Post Title",
+    //     contents: "blah blah blah",
+    //     user_id: 1
+    // }
+    Post.create({
+        title: req.body.title,
+        contents: req.body.contents,
+        user_id: req.session.user_id || /* take this out when login function created */ req.body.user_id
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => res.status(500).json(err));
+});
 
 // UPDATE a post "/api/posts/:id"
 
