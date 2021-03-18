@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3001;
 
 // session
 const session = require("express-session");
-
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
@@ -22,8 +21,16 @@ const sess = {
     })
 };
 
-// middleware
 app.use(session(sess));
+
+// handlebars engine
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
+// middleware
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
