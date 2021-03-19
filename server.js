@@ -12,9 +12,14 @@ const session = require("express-session");
 
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
+const tenMinutes = 600000;
+
 const sess = {
     secret: process.env.SECRET,
-    cookie: {},
+    cookie: {
+        expires: new Date(Date.now() + tenMinutes),
+        maxAge: tenMinutes
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
