@@ -1,1 +1,17 @@
-<h1>Woop!</h1>
+<article>
+    <a href="/dashboard"> &larr; back to dashboard</a>
+    <h2>
+        edit post
+    </h2>
+    <form class="edit-post-form">
+        <div>
+            <input name="post-title" type="text" value="{{post.title}}" />
+        </div>
+        <div>
+            <textarea id="post-contents" name="post-contents">{{post.contents}}</textarea>
+        </div>
+        <button type="submit">save</button>
+    </form>
+</article>
+
+{{> comments post.comments}}
