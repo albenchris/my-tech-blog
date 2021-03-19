@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { compareSync } = require("bcrypt");
 const { User, Post, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // GET all users "/api/users"
 router.get("/", (req, res) => {
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 // GET user by id "/api/users/:id"
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ["password"] },
         where: {
@@ -114,7 +115,7 @@ router.post("/logout", (req, res) => {
 });
 
 // UPDATE user "/api/users/:id"
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     // expects {
     //     username: "MyUsername",
     //     email: "myemail@email.com",
@@ -137,7 +138,7 @@ router.put("/:id", (req, res) => {
 });
 
 // DELETE user "/api/users/:id"
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
