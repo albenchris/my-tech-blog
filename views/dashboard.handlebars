@@ -1,3 +1,33 @@
+<h2>Welcome to Your Dashboard</h2>
+
 <section>
-    <h2>Welcome to Your Dashboard</h2>
+    <h3 class="section-title">Create New Post</h3>
+
+    <form class="new-post-form">
+        <div>
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label for="post-contents">Contents</label>
+            <textarea id="post-contents" name="post-contents"></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
 </section>
+
+{{#if posts.length}}
+<section>
+    <h3 class="section-title">Your Posts</h3>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            {{!-- link to edit post here --}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/javascript/create-post.js"></script>
