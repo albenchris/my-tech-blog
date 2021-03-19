@@ -29,7 +29,7 @@ router.post("/", (req, res) => {
     //     post_id: 1,
     //     user_id: 1
     // }
-    // if (req.session) {
+    if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
             post_id: req.body.post_id,
@@ -37,7 +37,7 @@ router.post("/", (req, res) => {
         })
             .then(dbCommentData => res.json(dbCommentData))
             .catch(err => res.status(500).json(err));
-    // }
+    }
 });
 
 // DELETE a comment "/api/comments/:id"

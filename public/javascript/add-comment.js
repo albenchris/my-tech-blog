@@ -7,7 +7,7 @@ async function commentFormHandler(event) {
     const post_id = windLocArr[windLocArr.length - 1];
 
     if (comment_text) {
-        const response = await fetch("api/comments", {
+        const response = await fetch("/api/comments", {
             method: "POST",
             body: JSON.stringify({
                 post_id,
