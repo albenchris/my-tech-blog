@@ -11,9 +11,11 @@
             <textarea id="post-contents" name="post-contents">{{post.contents}}</textarea>
         </div>
         <button type="submit">save</button>
+        <button type="button" class="delete-post-btn">delete</button>
     </form>
 </article>
 
 {{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
