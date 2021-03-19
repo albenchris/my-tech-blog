@@ -1,0 +1,140 @@
+:root {
+    --dark: rgb(31, 30, 30);
+    --light: rgb(245, 240, 240);
+    --primary: rgb(245, 139, 39);
+    --secondary: rgb(74, 224, 235);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass Mono', monospace;
+    font-size: 20px;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+/* HEADER STYLES START */
+header {
+    border-bottom: 1px solid var(--light);
+    padding: 1rem 1%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999999;
+}
+
+header h1 a,
+header nav a,
+header nav button {
+    color: var(--primary)
+}
+
+header h1 a {
+    font-size: 1.75rem;
+}
+
+header h1 a,
+header nav a,
+header nav button {
+    margin: 0 1rem;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    /* color: var(--primary); */
+    font-size: 1rem;
+}
+/* HEADER STYLES soft END */
+
+header,
+header nav,
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FOOTER STYLES soft START */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+}
+
+footer,
+footer a {
+    font-size: 1rem;
+}
+
+footer a {
+    padding-top: 0.3rem;
+    padding-left: 0.7rem;
+    color: var(--light);
+}
+/* FOOTER STYLES END */
+
+/* MAIN STYLES START */
+main {
+    flex: 1;
+    padding: 2% 4%;
+}
+/* MAIN STYLES END */
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 530px) {
+
+    header {
+        padding-bottom: 0.5rem;
+        justify-content: center;
+        position: relative;
+    }
+
+    header h1 a {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 370px) {
+
+    header {
+        padding-top: 0.3rem;
+    }
+
+    header h1 a {
+        font-size: 1.5rem;
+    }
+
+    header nav a,
+    .btn-no-style {
+        font-size: 0.9rem;
+    }
+}
