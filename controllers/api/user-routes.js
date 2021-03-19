@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { compareSync } = require("bcrypt");
 const { User, Post, Comment } = require("../../models");
 
 // GET all users "/api/users"
@@ -66,8 +67,10 @@ router.post("/", (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
-// LOGIN
+// LOGIN "/api/users/login"
 router.post("/login", (req, res) => {
+    console.log(req.body.password);
+
     User.findOne({
         where: { email: req.body.email }
     })
@@ -100,6 +103,15 @@ router.post("/login", (req, res) => {
 });
 
 // LOGOUT
+router.post("/logout", (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
 
 // UPDATE user "/api/users/:id"
 router.put("/:id", (req, res) => {
