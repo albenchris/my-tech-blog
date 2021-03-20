@@ -1,5 +1,6 @@
 :root {
     --dark: rgb(31, 30, 30);
+    --medium: rgb(50, 50, 50);
     --light: rgb(245, 240, 240);
     --primary: rgb(245, 139, 39);
     --secondary: rgb(74, 224, 235);
@@ -23,6 +24,68 @@ body {
 a {
     text-decoration: none;
     color: var(--secondary);
+    opacity: 0.9;
+}
+
+textarea,
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--light);
+    background-color: var(--medium);
+    color: var(--light);
+    width: 80%;
+    margin: 10%;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+    border: 1px solid var(--secondary);
+    background-color: var(--medium);
+    color: var(--light);
+}
+
+input:enabled {
+    outline: none;
+    border: 1px solid var(--secondary);
+    background-color: var(--medium);
+    color: var(--light);
+}
+
+textarea:enabled {
+    background-color: var(--medium);
+    color: var(--light);
+}
+
+button {
+    border: 0;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--dark);
+    opacity: 0.9;
+}
+
+a:hover,
+button:hover {
+    opacity: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--secondary);
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* HEADER STYLES START */
@@ -121,6 +184,10 @@ main {
         width: 100%;
         justify-content: center;
     }
+
+    footer a {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 370px) {
@@ -136,5 +203,9 @@ main {
     header nav a,
     .btn-no-style {
         font-size: 0.9rem;
+    }
+
+    footer a {
+        margin-left: 0;
     }
 }
