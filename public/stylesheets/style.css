@@ -27,6 +27,22 @@ a {
     opacity: 0.9;
 }
 
+button {
+    border: 0;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--dark);
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+a:hover,
+button:hover {
+    opacity: 1;
+}
+
 textarea,
 input {
     padding: 10px;
@@ -38,39 +54,14 @@ input {
     margin: 10%;
 }
 
+input:focus,
+input:enabled,
 textarea:focus,
-input:focus {
-    outline: none;
-    border: 1px solid var(--secondary);
-    background-color: var(--medium);
-    color: var(--light);
-}
-
-input:enabled {
-    outline: none;
-    border: 1px solid var(--secondary);
-    background-color: var(--medium);
-    color: var(--light);
-}
-
 textarea:enabled {
+    outline: none;
+    border: 1px solid var(--secondary);
     background-color: var(--medium);
     color: var(--light);
-}
-
-button {
-    border: 0;
-    padding: 3px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: var(--primary);
-    color: var(--dark);
-    opacity: 0.9;
-}
-
-a:hover,
-button:hover {
-    opacity: 1;
 }
 
 input:-webkit-autofill,
@@ -78,18 +69,16 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+textarea:-webkit-autofill:focus {
   border: 1px solid var(--secondary);
-  -webkit-text-fill-color: green;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  -webkit-text-fill-color: var(--light);
+  -webkit-box-shadow: 0 0 0px 1000px var(--medium) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
 /* HEADER STYLES START */
 header {
+    background-color: var(--dark);
     border-bottom: 1px solid var(--light);
     padding: 1rem 1%;
     position: -webkit-sticky;
@@ -120,8 +109,8 @@ header nav button {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    /* color: var(--primary); */
     font-size: 1rem;
+    font-weight: normal;
 }
 /* HEADER STYLES soft END */
 
@@ -136,7 +125,8 @@ footer {
 
 /* FOOTER STYLES soft START */
 footer {
-    position: absolute;
+    margin-top: 1rem;
+    background-color: var(--dark);
     bottom: 0;
     width: 100%;
     border-top: 1px solid var(--light);
@@ -186,7 +176,7 @@ main {
     }
 
     footer a {
-        margin-left: 0;
+        display: block;
     }
 }
 
@@ -204,8 +194,11 @@ main {
     .btn-no-style {
         font-size: 0.9rem;
     }
+}
+
+@media screen and (max-width: 304px) {
 
     footer a {
-        margin-left: 0;
+        padding-left: 0;
     }
 }
