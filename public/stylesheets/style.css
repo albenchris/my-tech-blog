@@ -4,6 +4,7 @@
     --light: rgb(245, 240, 240);
     --primary: rgb(245, 139, 39);
     --secondary: rgb(74, 224, 235);
+    --nuh-uh: rgb(247, 29, 14);
 }
 
 * {
@@ -64,6 +65,11 @@ button:hover {
     margin-top: 2rem;
 }
 
+.login-form h3,
+.edit-post-form h3 {
+    padding-top: 1rem;
+}
+
 form label {
     display: block;
 }
@@ -112,6 +118,7 @@ textarea:-webkit-autofill:focus {
 
 form div button {
     float: right;
+    margin-left: 1rem;
     border: 1px solid var(--primary);
     background-color: var(--dark);
     color: var(--primary);
@@ -120,7 +127,27 @@ form div button {
 form div button:hover {
     background-color: var(--primary);
     color: var(--dark);
-    opacity: 1;
+    /* opacity: 1; */
+}
+
+.save-post-btn {
+    border-color: var(--secondary);
+    color: var(--secondary)
+}
+
+.save-post-btn:hover{
+    background-color: var(--secondary);
+    color: var(--dark);
+}
+
+.delete-post-btn {
+    border-color: 1px solid var(--nuh-uh);
+    color: var(--nuh-uh);
+}
+
+.delete-post-btn:hover {
+    background-color: var(--nuh-uh);
+    color: var(--dark);
 }
 /* FORM STYTLES END */
 
