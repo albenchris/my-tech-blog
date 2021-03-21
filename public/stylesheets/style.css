@@ -314,6 +314,7 @@ footer {
     background-color: var(--dark);
     bottom: 0;
     width: 100%;
+    max-width: 1000px;
     border-top: 1px solid var(--light);
     display: flex;
     justify-content: center;
