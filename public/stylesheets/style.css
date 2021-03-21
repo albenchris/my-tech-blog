@@ -22,6 +22,10 @@ body {
     color: var(--light);
 }
 
+h2 {
+    font-size: 1.3rem;
+}
+
 h3 {
     color: var(--primary);
     margin: 1rem 0;
@@ -57,6 +61,7 @@ button:hover {
 main {
     flex: 1;
     padding: 2% 4%;
+    margin-bottom: 2rem;
 }
 
 .wrapper {
@@ -216,6 +221,7 @@ textarea:-webkit-autofill:focus {
 form div button {
     float: right;
     margin-left: 1rem;
+    margin-bottom: 4rem;
     border: 1px solid var(--primary);
     background-color: var(--dark);
     color: var(--primary);
