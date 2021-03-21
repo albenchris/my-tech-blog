@@ -4,6 +4,7 @@
     --light: rgb(245, 240, 240);
     --primary: rgb(245, 139, 39);
     --secondary: rgb(74, 224, 235);
+    --nuh-uh: rgb(247, 29, 14);
 }
 
 * {
@@ -19,15 +20,6 @@ body {
     min-height: 100vh;
     background-color: var(--dark);
     color: var(--light);
-}
-
-.wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 
 h3 {
@@ -59,9 +51,120 @@ button:hover {
     opacity: 1;
 }
 
+/* ========================================================= */
+
+/* MAIN STYLES START */
+main {
+    flex: 1;
+    padding: 2% 4%;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding-bottom: 1rem;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin-bottom: 1.5rem;
+}
+
+.post {
+    background-color: var(--medium);
+    line-height: 1.5rem;
+}
+
+.post p {
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.title,
+.meta {
+    padding: 0.3rem;
+}
+
+.meta {
+    border: 1px solid var(--primary);
+    background-color: var(--dark);
+    color: var(--light);
+    font-style: italic;
+    text-align: right;
+}
+
+.username {
+    color: var(--primary);
+    font-style: normal;
+}
+
+.meta a {
+    font-style: normal;
+    padding-left: 0.7rem;
+}
+
+.edit-link {
+    padding: 0 0 1rem 0.3rem;
+    padding-bottom: 1rem;
+}
+
+.comments {
+    padding-top: 3rem;
+}
+
+.comment-form {
+    margin-bottom: 5%;
+}
+
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.comment:nth-child(odd),
+.comment:nth-child(odd) .meta {
+    background-color: var(--medium);
+}
+
+.comment .text {
+    padding: 0.3rem;
+}
+
+.comment .meta {
+    font-size: 0.9rem;
+    margin-bottom: 0.5%;
+    border: none;
+    opacity: 0.6;
+}
+/* MAIN STYLES END */
+
+/* ========================================================= */
+
 /* FORM STYTLES START */
 .signup-form h3 {
     margin-top: 2rem;
+}
+
+.login-form h3,
+.edit-post-form h3 {
+    padding-top: 1rem;
 }
 
 form label {
@@ -112,6 +215,7 @@ textarea:-webkit-autofill:focus {
 
 form div button {
     float: right;
+    margin-left: 1rem;
     border: 1px solid var(--primary);
     background-color: var(--dark);
     color: var(--primary);
@@ -120,9 +224,31 @@ form div button {
 form div button:hover {
     background-color: var(--primary);
     color: var(--dark);
-    opacity: 1;
+    /* opacity: 1; */
+}
+
+.save-post-btn {
+    border-color: var(--secondary);
+    color: var(--secondary)
+}
+
+.save-post-btn:hover{
+    background-color: var(--secondary);
+    color: var(--dark);
+}
+
+.delete-post-btn {
+    border-color: 1px solid var(--nuh-uh);
+    color: var(--nuh-uh);
+}
+
+.delete-post-btn:hover {
+    background-color: var(--nuh-uh);
+    color: var(--dark);
 }
 /* FORM STYTLES END */
+
+/* ========================================================= */
 
 /* HEADER STYLES START */
 header {
@@ -162,6 +288,8 @@ header nav button {
 }
 /* HEADER STYLES soft END */
 
+/* ========================================================= */
+
 header,
 header nav,
 footer {
@@ -170,6 +298,8 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+
+/* ========================================================= */
 
 /* FOOTER STYLES soft START */
 footer {
@@ -196,12 +326,7 @@ footer a {
 }
 /* FOOTER STYLES END */
 
-/* MAIN STYLES START */
-main {
-    flex: 1;
-    padding: 2% 4%;
-}
-/* MAIN STYLES END */
+/* ========================================================= */
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 530px) {
