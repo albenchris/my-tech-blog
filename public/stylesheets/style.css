@@ -21,41 +21,26 @@ body {
     color: var(--light);
 }
 
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: var(--primary);
+    margin: 1rem 0;
+    padding-top: 2rem;
+    font-size: 1.2rem;
+}
+
 a {
     text-decoration: none;
     color: var(--secondary);
     opacity: 0.9;
-}
-
-textarea,
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--light);
-    background-color: var(--medium);
-    color: var(--light);
-    width: 80%;
-    margin: 10%;
-}
-
-textarea:focus,
-input:focus {
-    outline: none;
-    border: 1px solid var(--secondary);
-    background-color: var(--medium);
-    color: var(--light);
-}
-
-input:enabled {
-    outline: none;
-    border: 1px solid var(--secondary);
-    background-color: var(--medium);
-    color: var(--light);
-}
-
-textarea:enabled {
-    background-color: var(--medium);
-    color: var(--light);
 }
 
 button {
@@ -65,6 +50,7 @@ button {
     border-radius: 5px;
     background-color: var(--primary);
     color: var(--dark);
+    font-weight: bold;
     opacity: 0.9;
 }
 
@@ -73,23 +59,74 @@ button:hover {
     opacity: 1;
 }
 
+/* FORM STYTLES START */
+.signup-form h3 {
+    margin-top: 2rem;
+}
+
+form label {
+    display: block;
+}
+
+form div {
+    margin-bottom: 0.7rem;
+}
+
+textarea,
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--light);
+    background-color: var(--medium);
+    color: var(--light);
+    width: 90%;
+    margin: 5%;
+}
+
+textarea {
+    min-width: 40%;
+    min-height: 5rem;
+}
+
+input:focus,
+input:enabled,
+textarea:focus,
+textarea:enabled {
+    outline: none;
+    border: 1px solid var(--secondary);
+    background-color: var(--medium);
+    color: var(--light);
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+textarea:-webkit-autofill:focus {
   border: 1px solid var(--secondary);
-  -webkit-text-fill-color: green;
-  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  -webkit-text-fill-color: var(--light);
+  -webkit-box-shadow: 0 0 0px 1000px var(--medium) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
+form div button {
+    float: right;
+    border: 1px solid var(--primary);
+    background-color: var(--dark);
+    color: var(--primary);
+}
+
+form div button:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+    opacity: 1;
+}
+/* FORM STYTLES END */
+
 /* HEADER STYLES START */
 header {
+    background-color: var(--dark);
     border-bottom: 1px solid var(--light);
     padding: 1rem 1%;
     position: -webkit-sticky;
@@ -120,8 +157,8 @@ header nav button {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    /* color: var(--primary); */
     font-size: 1rem;
+    font-weight: normal;
 }
 /* HEADER STYLES soft END */
 
@@ -136,7 +173,8 @@ footer {
 
 /* FOOTER STYLES soft START */
 footer {
-    position: absolute;
+    margin-top: 1rem;
+    background-color: var(--dark);
     bottom: 0;
     width: 100%;
     border-top: 1px solid var(--light);
@@ -186,7 +224,7 @@ main {
     }
 
     footer a {
-        margin-left: 0;
+        display: block;
     }
 }
 
@@ -204,8 +242,11 @@ main {
     .btn-no-style {
         font-size: 0.9rem;
     }
+}
+
+@media screen and (max-width: 304px) {
 
     footer a {
-        margin-left: 0;
+        padding-left: 0;
     }
 }
