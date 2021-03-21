@@ -303,6 +303,7 @@ footer {
 
 /* FOOTER STYLES soft START */
 footer {
+    position: absolute;
     margin-top: 1rem;
     background-color: var(--dark);
     bottom: 0;
