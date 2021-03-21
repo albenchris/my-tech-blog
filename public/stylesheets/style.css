@@ -21,6 +21,22 @@ body {
     color: var(--light);
 }
 
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: var(--primary);
+    margin: 1rem 0;
+    padding-top: 2rem;
+    font-size: 1.2rem;
+}
+
 a {
     text-decoration: none;
     color: var(--secondary);
@@ -43,6 +59,19 @@ button:hover {
     opacity: 1;
 }
 
+/* FORM STYTLES START */
+.signup-form h3 {
+    margin-top: 2rem;
+}
+
+form label {
+    display: block;
+}
+
+form div {
+    margin-bottom: 0.7rem;
+}
+
 textarea,
 input {
     padding: 10px;
@@ -50,8 +79,13 @@ input {
     border: 1px solid var(--light);
     background-color: var(--medium);
     color: var(--light);
-    width: 80%;
-    margin: 10%;
+    width: 90%;
+    margin: 5%;
+}
+
+textarea {
+    min-width: 40%;
+    min-height: 5rem;
 }
 
 input:focus,
@@ -75,6 +109,20 @@ textarea:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--medium) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+form div button {
+    float: right;
+    border: 1px solid var(--primary);
+    background-color: var(--dark);
+    color: var(--primary);
+}
+
+form div button:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+    opacity: 1;
+}
+/* FORM STYTLES END */
 
 /* HEADER STYLES START */
 header {
