@@ -124,6 +124,35 @@ li {
     padding: 0 0 1rem 0.3rem;
     padding-bottom: 1rem;
 }
+
+.comments {
+    padding-top: 3rem;
+}
+
+.comment-form {
+    margin-bottom: 5%;
+}
+
+.comment {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+.comment:nth-child(odd),
+.comment:nth-child(odd) .meta {
+    background-color: var(--medium);
+}
+
+.comment .text {
+    padding: 0.3rem;
+}
+
+.comment .meta {
+    font-size: 0.9rem;
+    margin-bottom: 0.5%;
+    border: none;
+    opacity: 0.6;
+}
 /* MAIN STYLES END */
 
 /* ========================================================= */
